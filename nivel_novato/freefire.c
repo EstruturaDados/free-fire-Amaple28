@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h> // Para system("cls") ou system("clear") se necessário
+#include <stdlib.h>
 
 // --- Definições Globais ---
 #define MAX_ITENS 10
@@ -22,9 +22,8 @@ int numItens = 0;
 
 // Simula a limpeza da tela
 void limparTela() {
-    // Tenta limpar a tela. Pode precisar de ajuste dependendo do SO/Terminal.
-    // system("cls"); // Para Windows
-    // system("clear"); // Para Linux/macOS
+    // Tenta limpar a tela
+    system("cls"); // Para Windows
     printf("\n\n"); // Uma alternativa simples para pular linhas
 }
 
@@ -84,7 +83,7 @@ void removerItem() {
 
     int indiceRemover = -1;
 
-    // Busca sequencial (sem otimizações)
+    // Busca sequencial 
     for (int i = 0; i < numItens; i++) {
         // strcmp retorna 0 se as strings forem idênticas
         if (strcmp(mochila[i].nome, nomeBusca) == 0) {
